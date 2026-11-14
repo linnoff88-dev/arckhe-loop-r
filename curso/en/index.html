@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOOP-R: The Business That Learns on Its Own · INEMA.CLUB PRO</title>
+<meta name="description" content="Course for business owners and managers 40+: build an AI-powered improvement loop for your business — evidence, hypothesis, experiment, and a decision card with a back button. No video, no installation required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E0D14;--bg2:#15131d;--panel:#1a1824;--ink:#ECE6D9;--ink-soft:#C7C2D0;--muted:#948DA6;--faint:#6C6580;
+    --line:#2A2637;--line2:#37324a;--accent:#7CE0C6;--accent-ink:#0E0D14;--warm:#F2B45C;
+    --serif:"Newsreader",Georgia,serif;--sans:"Inter",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(24px,5vw,60px)}
+  header.top{padding:26px 0}
+  header.top .wrap{display:flex;align-items:center;gap:10px}
+  header.top .mark{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);text-decoration:none;font-weight:700}
+  header.top .pro{background:var(--accent);color:var(--accent-ink);border-radius:4px;padding:2px 6px;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-decoration:none;margin-left:8px}
+  header.top .course{color:var(--muted);font-size:12px;letter-spacing:.04em;border-left:1px solid var(--line2);padding-left:10px;margin-left:2px;font-family:var(--mono)}
+  .hero{position:relative;padding:10vh 0 9vh;border-bottom:1px solid var(--line);overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(55% 48% at 80% 20%,rgba(124,224,198,.14),transparent 60%),radial-gradient(90% 90% at 50% 40%,var(--bg2),var(--bg) 72%)}
+  .hero .wrap{position:relative;z-index:1}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.02em;margin:0 0 22px;max-width:18ch}
+  h1 em{font-style:italic;color:var(--accent)}
+  .lead{font-family:var(--serif);font-size:clamp(18px,2vw,22px);line-height:1.55;color:var(--ink-soft);max-width:46ch;margin:0 0 34px}
+  .cta{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.06em;background:var(--accent);color:var(--accent-ink);text-decoration:none;border-radius:99px;padding:15px 26px;font-weight:700}
+  .cta:hover{opacity:.92}
+  .sub{color:var(--muted);font-size:13.5px;margin-top:14px;font-family:var(--mono)}
+  section{padding:8vh 0}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,36px);margin:0 0 28px}
+  .resultados{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .resultado{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:22px 24px}
+  .resultado p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.55}
+  .resultado p b{color:var(--ink)}
+  .lessons{display:grid;gap:14px}
+  .au{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+  .au .num{font-family:var(--serif);font-size:26px;color:var(--accent);text-align:center}
+  .au h3{font-family:var(--serif);font-weight:500;font-size:19px;margin:0 0 4px}
+  .au p{margin:0;color:var(--muted);font-size:14px}
+  .au .meta{font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap;text-align:right}
+  .au:hover{border-color:var(--accent)}
+  .publico{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .publico .col{background:var(--panel);padding:22px 24px}
+  .publico .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px}
+  .publico .col.sim .lbl{color:var(--accent)}
+  .publico .col.nao .lbl{color:var(--muted)}
+  .publico ul{margin:0;padding:0;list-style:none}
+  .publico li{position:relative;padding-left:20px;margin:0 0 10px;color:var(--ink-soft);font-size:14.5px;line-height:1.5}
+  .publico li::before{content:"—";position:absolute;left:0;color:var(--faint)}
+  .honesto{border-left:2px solid var(--warm);padding:4px 0 4px 22px;margin:34px 0 0;font-family:var(--serif);font-size:17px;color:var(--ink-soft);max-width:60ch}
+  footer{border-top:1px solid var(--line);padding:6vh 0 8vh;color:var(--faint);text-align:center;font-family:var(--serif);font-style:italic}
+  @media(max-width:720px){ .publico{grid-template-columns:1fr} .au{grid-template-columns:44px 1fr} .au .meta{grid-column:2;text-align:left} }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<style>.language-links{text-align:center;padding:1rem}.language-links a{color:inherit;margin:0 .25rem}</style>
+<link rel="alternate" hreflang="pt-BR" href="../index.html"><link rel="alternate" hreflang="en" href="index.html"><link rel="alternate" hreflang="es" href="../es/index.html"><link rel="alternate" hreflang="x-default" href="../index.html"><link rel="canonical" href="https://inematds.github.io/loop-r/curso/en/index.html"><style id="language-navigation-style">
+.language-links,.languages{display:inline-flex;align-items:center;gap:.5rem;font:12px system-ui;white-space:nowrap}.language-links a,.languages a{color:inherit;text-decoration:none}.language-links [aria-current=page],.languages [aria-current=page]{font-weight:700;text-decoration:underline}.language-links{padding:.5rem 1rem}.links>a[lang]{font:12px system-ui}.bar-inner{flex-wrap:wrap}.bar .languages{pointer-events:auto}header.top .wrap{flex-wrap:wrap}
+@media(max-width:760px){nav>.wrap{height:auto;min-height:60px;flex-wrap:wrap;gap:12px;padding-block:10px}nav .links{gap:10px;flex-wrap:wrap}}
+</style></head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="mark" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+  <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  <span class="course">LOOP-R: The Business That Learns on Its Own</span>
+</div></header><div class="wrap language-links"><span class="languages"><a lang="pt-BR" href="../index.html">PT</a> · <a lang="en" href="index.html">EN</a> · <a lang="es" href="../es/index.html">ES</a></span></div>
+
+<section class="hero"><div class="wrap">
+  <p class="kicker">AI for your business · beginner level</p>
+  <h1>Your business uses AI a thousand times. <em>Why does nothing change?</em></h1>
+  <p class="lead">By the end, you will have an improvement loop running on one of your business processes, with a record of what was tested and a rollback button. No videos; learn at your own pace in your browser.</p>
+  <a class="cta" href="trilha-1/curso.html#trilha">start with track 1 →</a>
+  <p class="sub">~20 min per session · 5 tracks · 21 lessons · no installation · works on phone and computer</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow">What you will know how to do</p>
+  <h2>Results, not theory</h2>
+  <div class="resultados">
+    <div class="resultado"><p><b>Write a measurable goal</b> — “from 3 out of 100 to 5 out of 100,” not “improve sales.” This is the first of the five answers that set up the loop.</p></div>
+    <div class="resultado"><p><b>Turn results into evidence</b> — a tracking spreadsheet, with one row per proposal, support ticket, or post, which the loop reads each week.</p></div>
+    <div class="resultado"><p><b>Define what must never change on its own</b> — the guardrails: what AI cannot touch and what must not get worse while the rest improves.</p></div>
+    <div class="resultado"><p><b>Decide with the five-line card</b> — approve, reject, or wait for more data, knowing which sample size provides evidence and which only looks convincing.</p></div>
+    <div class="resultado"><p><b>Know what the loop does not guarantee</b> — so you can trust what it does guarantee: no worse version goes live, everything is recorded, and you can roll back.</p></div>
+  </div>
+  <p class="honesto">This course does not promise that your numbers will rise. It promises they will not fall because a system decided so, that every attempt will be recorded, and that you will know what evidence would make you discard your own idea.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow">Who this is for</p>
+  <h2>Made for where you are now</h2>
+  <div class="publico">
+    <div class="col sim">
+      <p class="lbl">this is for you if</p>
+      <ul>
+        <li>You own a clinic, sell real estate, manage customer support, or run any business where the same task repeats every week — and already use AI to write proposals, replies, or posts.</li>
+        <li>You feel AI gets things done, but nothing improves: today’s proposal starts from scratch, just like the one from six months ago.</li>
+        <li>You use WhatsApp, spreadsheets, and an AI chat. You have never opened a black command screen and do not plan to.</li>
+        <li>You have 20 minutes per session and prefer to finish each lesson with something filled in.</li>
+      </ul>
+    </div>
+    <div class="col nao">
+      <p class="lbl">this is not for you if</p>
+      <ul>
+        <li>You want to learn to program agents or integrate systems — this course teaches the method and decision-making, not coding.</li>
+        <li>You want a prompt-writing course. Here, prompts are parts of a system, not the system itself.</li>
+        <li>You want a course with traditional video lessons.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow">Tracks</p>
+  <h2>From diagnosis to your working loop</h2>
+  <div class="lessons">
+    <a class="au" href="trilha-1/curso.html#trilha">
+      <div class="num">1</div>
+      <div><h3>Why your business does not improve</h3><p>Leave with a list of five tasks in your business that “end there” and your maturity level marked (1 to 5).</p></div>
+      <div class="meta">4 lessons · 83 min</div>
+    </a>
+    <a class="au" href="trilha-2/curso.html#trilha">
+      <div class="num">2</div>
+      <div><h3>LOOP-R: locate, operate, observe, propose, reinforce</h3><p>Leave with a measurable goal, ten rows in the tracking spreadsheet, and three hypotheses in IF… THEN… BECAUSE format.</p></div>
+      <div class="meta">5 lessons · 101 min</div>
+    </a>
+    <a class="au" href="trilha-3/curso.html#trilha">
+      <div class="num">3</div>
+      <div><h3>The loop assistants</h3><p>Leave with written guardrails — three things that never change on their own and two that must not get worse — and the first entry in your memory.</p></div>
+      <div class="meta">4 lessons · 84 min</div>
+    </a>
+    <a class="au" href="trilha-4/curso.html#trilha">
+      <div class="num">4</div>
+      <div><h3>Measure for real</h3><p>Leave knowing what sample size provides evidence, with a yes/no checklist for your work product, and having decided on three real cards.</p></div>
+      <div class="meta">5 lessons · 109 min</div>
+    </a>
+    <a class="au" href="trilha-5/curso.html#trilha">
+      <div class="num">5</div>
+      <div><h3>From task to business</h3><p>Leave with a complete loop profile — all five answers — and your first completed decision card. This is your final deliverable.</p></div>
+      <div class="meta">3 lessons · 72 min</div>
+    </a>
+  </div>
+  <p style="margin-top:28px"><a class="cta" href="trilha-1/curso.html#trilha">start now →</a></p>
+  <p class="sub">Want to see the tool before taking the course? The LOOP-R guide is at <a href="../../guia/en/">inematds.github.io/loop-r/guia</a>.</p>
+</div></section>
+
+<footer><div class="wrap">LOOP-R: The Business That Learns on Its Own · INEMA.CLUB PRO</div></footer>
+
+
+<script id="language-navigation-script">(()=>{const update=()=>{document.querySelectorAll('a').forEach(a=>{if(!['PT','EN','ES'].includes(a.textContent.trim()))return;if(!a.dataset.languageBase)a.dataset.languageBase=a.getAttribute('href');const u=new URL(a.dataset.languageBase,location.href);u.search=location.search;u.hash=location.hash;a.href=u.href;const current=(document.documentElement.lang||'pt').slice(0,2).toUpperCase();if(a.textContent.trim()===current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});};update();addEventListener('hashchange',update);})();</script></body>
+</html>
